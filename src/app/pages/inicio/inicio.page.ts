@@ -30,7 +30,33 @@ export class InicioPage implements OnInit {
     icon: 'beaker-outline',
     name: 'Avatar',
     redirectTo: '/avatar'
+   },
+   {
+    icon: 'radio-button-off-outline',
+    name: 'Buttons',
+    redirectTo: '/button'
+   },
+   {
+    icon: 'card-outline',
+    name: 'Cards',
+    redirectTo: '/card'
+   },
+   {
+    icon: 'checkmark-circle-outline',
+    name: 'Checks',
+    redirectTo: '/check'
+   },
+   {
+    icon: 'calendar-outline',
+    name: 'DateTime',
+    redirectTo: '/date-time'
+   },
+   {
+    icon: 'car-outline',
+    name: 'Fab',
+    redirectTo: '/fab'
    }
+   
   ];
 
   constructor() { }
