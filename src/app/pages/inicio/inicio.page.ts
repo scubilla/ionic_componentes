@@ -55,7 +55,18 @@ export class InicioPage implements OnInit {
     icon: 'car-outline',
     name: 'Fab',
     redirectTo: '/fab'
+   },
+   {
+    icon: 'hammer-outline',
+    name: 'Input Forms',
+    redirectTo: '/input'
+   },
+   {
+    icon: 'list-outline',
+    name: 'List Sliding',
+    redirectTo: '/list'
    }
+
    
   ];
 
