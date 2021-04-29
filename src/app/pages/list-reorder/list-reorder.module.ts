@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ListReorderPageRoutingModule } from './list-reorder-routing.module';
 
 import { ListReorderPage } from './list-reorder.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListReorderPageRoutingModule
+    ListReorderPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ListReorderPage]
 })
