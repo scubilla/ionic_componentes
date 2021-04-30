@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { DataService } from '../../services/data.service';
+import { Componente } from '../../interfaces/interfaces';
+
 
 // creamos una interface para estandarizar los botones
-interface Componente {
-  icon: string;
-  name: string;
-  redirectTo: string;
-}
+// se borra al usar en menu cargado en el json
+
 
 @Component({
   selector: 'app-inicio',
@@ -14,81 +16,19 @@ interface Componente {
 })
 export class InicioPage implements OnInit {
 
-  // cargar cada uno de los componentes
-  componentes: Componente[] = [
-   {
-    icon: 'american-football-outline',
-    name: 'Action Sheet',
-    redirectTo: '/action-sheet'
-   },
-   {
-    icon: 'alert-circle-outline',
-    name: 'Alert',
-    redirectTo: '/alert'
-   },
-   {
-    icon: 'beaker-outline',
-    name: 'Avatar',
-    redirectTo: '/avatar'
-   },
-   {
-    icon: 'radio-button-off-outline',
-    name: 'Buttons',
-    redirectTo: '/button'
-   },
-   {
-    icon: 'card-outline',
-    name: 'Cards',
-    redirectTo: '/card'
-   },
-   {
-    icon: 'checkmark-circle-outline',
-    name: 'Checks',
-    redirectTo: '/check'
-   },
-   {
-    icon: 'calendar-outline',
-    name: 'DateTime',
-    redirectTo: '/date-time'
-   },
-   {
-    icon: 'car-outline',
-    name: 'Fab',
-    redirectTo: '/fab'
-   },
-   {
-    icon: 'grid-outline',
-    name: 'Grid',
-    redirectTo: '/grid'
-   },
-   {
-    icon: 'infinite-outline',
-    name: 'Infinite-Scroll',
-    redirectTo: '/infinite'
-   },
-   {
-    icon: 'hammer-outline',
-    name: 'Input Forms',
-    redirectTo: '/input'
-   },
-   {
-    icon: 'list-outline',
-    name: 'List Sliding',
-    redirectTo: '/list'
-   },
-   {
-    icon: 'reorder-three-outline',
-    name: 'List - Reorder',
-    redirectTo: '/list-reorder'
-   }
-
+  //componentes: Componente[] = [];
+  componentes: Observable<Componente[]>;
 
    
-  ];
-
-  constructor() { }
+  // inyectar menucontroller  metodo largo .. usar boton nomas
+  constructor( private menuController: MenuController,
+               private dataService: DataService) { }
+  //constructor( ) { }
 
   ngOnInit() {
+    this.componentes = this.dataService.getMenuOpts(); 
   }
+
+  // mostrarMenu() { }
 
 }
