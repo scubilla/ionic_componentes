@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>grid</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Grid"></app-header>
 
 <ion-content>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col  size="12" size-lg="3" size-md="4" size-sm="6"
+                *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]">
+
+        <ion-card>
+          <ion-img src="/assets/cerro.png"></ion-img>
+        </ion-card>
+
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          buen dia. si conocen programadora junior GENEXUS (puede ser estudiante aun ) sexo femenino si me pueden escribir al privado les paso el dato del contacto que esta necesitando. gracias
+        </ion-card-content>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
 
 </ion-content>
