@@ -19,9 +19,23 @@ export class ModalPage implements OnInit {
   async mostrarModal(){
     const modal = await this.modalController.create({
       component: ModalInfoPage,
+      componentProps: {
+        nombre: 'Simon',
+        pais: 'Paraguay'
+      }
+
     });
 
     await modal.present();
+
+    // const resp = await modal.onDidDismiss();
+    // en vez de resp usamos "desestructracion"
+    // const {data} = await modal.onDidDismiss();
+    
+    const {data} = await modal.onWillDismiss();
+    console.log('onWillDissmiss');
+
+    console.log(data);
   }
 
 }
