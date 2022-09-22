@@ -4,10 +4,31 @@ import { Routes, RouterModule } from '@angular/router';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
+  // patg por defecto
   {
     path: '',
-    component: TabsPage
+    redirectTo: '/tabs/account',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
+    component: TabsPage,
+    children: [
+      {
+        path: 'account',
+        loadChildren: () => import('../avatar/avatar.module').then( m => m.AvatarPageModule )
+      },
+      {
+        path: 'contact',
+        loadChildren: () => import('../list/list.module').then( m => m.ListPageModule )
+      },
+      {
+        path: 'settings',
+        loadChildren: () => import('../infinite/infinite.module').then( m => m.InfinitePageModule)
+      }
+    ]  
   }
+
 ];
 
 @NgModule({
